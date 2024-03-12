@@ -231,21 +231,17 @@ material-symbols-outlined{
     background-color: rgba(128, 128, 128, 0);
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 481px) {
     .container{
         max-width: fit-content;
         height: fit-content;
     }
 
-    .info-box{
-        max-width: auto;
-        height: auto;
+    .Passwordbox, .info-box{
+        max-width: fit-content;
+        max-height: fit-content;
     }
 
-    .Passwordbox{
-        width: auto;
-        height: auto;
-    }
 }
 
 

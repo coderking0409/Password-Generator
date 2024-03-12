@@ -53,7 +53,7 @@ generateButton.addEventListener("click",function(){
     const newPassword = generatePassword();
     passwordBox.textContent = newPassword;
 
-    if (totalChar.value === 0 || !upperInput.checked) {
+    if (totalChar.value === 0 || (!upperInput.checked && !lowerInput.checked && !numberInput.checked && !specialInput.checked)) {
         alert("Please select a valid number of characters");
     }else{
         strengthBox();
@@ -97,13 +97,18 @@ const checkboxesChecked = () => {
 const strengthBox = () => {
     if (totalChar.value < 8 || checkboxesChecked() <= 2) {
         strength.textContent = "WEAK";
-        bar1.style.backgroundColor = "darkgoldenrod"; // Dark yellow color
+        bar1.style.backgroundColor = "darkgoldenrod";
+        bar2.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
+        bar3.style.backgroundColor = "rgba(255, 255, 255, 0.5)"
+        bar4.style.backgroundColor = "rgba(255, 255, 255, 0.5)"
     }
     if (totalChar.value >= 8 && checkboxesChecked() === 3) {
         strength.textContent = "MEDIUM";
         bar1.style.backgroundColor = "darkgoldenrod";
         bar2.style.backgroundColor = "darkgoldenrod";
-        // bar3.style.backgroundColor = "darkgoldenrod";
+        bar3.style.backgroundColor = "darkgoldenrod"
+        bar4.style.backgroundColor = "rgba(255, 255, 255, 0.5)"
+
     }
     if (totalChar.value >= 8 && checkboxesChecked() === 4) {
         strength.textContent = "STRONG";
