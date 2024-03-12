@@ -213,14 +213,14 @@ material-symbols-outlined{
 
 .length{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
-    width: fit-content;
+    width: auto;
     height: 50px;
     background-color: rgba(128, 128, 128, 0);
 }
 
-.length .length > p{
+.length p{
     background-color: rgba(255, 0, 0, 0);
     
 }
@@ -229,19 +229,22 @@ material-symbols-outlined{
     font-size: 30px;
     color: yellowgreen;
     background-color: rgba(128, 128, 128, 0);
+    
 }
 
 @media screen and (max-width: 481px) {
-    .container{
+    .container, .Passwordbox, .info-box {
         max-width: fit-content;
         height: fit-content;
     }
-
-    .Passwordbox, .info-box{
-        max-width: fit-content;
-        max-height: fit-content;
-    }
-
 }
+
+@media screen and (max-width: 370px) {
+    .container, .Passwordbox, .info-box {
+        max-width: fit-content;
+        height: fit-content;
+    }
+}
+
 
 
