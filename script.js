@@ -3,6 +3,7 @@ const rangeInputValue = document.querySelector(".CharLen")
 
 rangeInput.addEventListener("input",function(){
     rangeInputValue.textContent = this.value;
+    
 });
 
 const uppercaseSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -52,8 +53,10 @@ generateButton.addEventListener("click",function(){
     const newPassword = generatePassword();
     passwordBox.textContent = newPassword;
 
-    if (totalChar.value === 0 && !upperInput.checked) {
+    if (totalChar.value === 0 || !upperInput.checked) {
         alert("Please select a valid number of characters");
+    }else{
+        strengthBox();
     }
 });
 
@@ -65,3 +68,49 @@ function trimPass(str,num){
         return str
     }
 }
+
+//selectors
+const strength = document.querySelector(".strength");
+const bar1 = document.getElementById("one");
+const bar2 = document.getElementById("two");
+const bar3 = document.getElementById("three");
+const bar4 = document.getElementById("four");
+
+const checkboxesChecked = () => {
+    const arr = [];
+    if (upperInput.checked) {
+        arr.push("1");
+    }
+    if (lowerInput.checked) {
+        arr.push("2");
+    }
+    if (numberInput.checked) {
+        arr.push("3");
+    }
+    if (specialInput.checked) {
+        arr.push("4");
+    }
+
+    return arr.length;
+};
+
+const strengthBox = () => {
+    if (totalChar.value < 8 || checkboxesChecked() <= 2) {
+        strength.textContent = "WEAK";
+        bar1.style.backgroundColor = "darkgoldenrod"; // Dark yellow color
+    }
+    if (totalChar.value >= 8 && checkboxesChecked() === 3) {
+        strength.textContent = "MEDIUM";
+        bar1.style.backgroundColor = "darkgoldenrod";
+        bar2.style.backgroundColor = "darkgoldenrod";
+        // bar3.style.backgroundColor = "darkgoldenrod";
+    }
+    if (totalChar.value >= 8 && checkboxesChecked() === 4) {
+        strength.textContent = "STRONG";
+        bar1.style.backgroundColor = "darkgoldenrod";
+        bar2.style.backgroundColor = "darkgoldenrod";
+        bar3.style.backgroundColor = "darkgoldenrod";
+        bar4.style.backgroundColor = "darkgoldenrod";
+    }
+};
+ 

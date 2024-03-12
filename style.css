@@ -36,6 +36,7 @@ body{
 .Passwordbox{
     /* border: 2px solid white; */
     width: 30em;
+    overflow-x: auto;
     height: 4em;
     background-color: rgba(128, 128, 128, 0.331);
     margin-top: 30px;
@@ -103,7 +104,7 @@ input[type="range"]{
     appearance: none;
     width: 80%;
     height: 10px;
-    background-color: rgba(26, 22, 22, 0.632);;
+    background: background: linear-gradient(to right, greenyellow 0%, greenyellow 100%);
     border-radius: 5px;
     outline: none;
 }
@@ -177,14 +178,14 @@ ul{
     display: flex;
     align-items: center;
     background-color: rgba(26, 22, 22, 0.632);
-    width: 350px;
-    height: 50px;
+    width: fit-content;
+    height: fit-content;
     padding: 10px;
     color: grey;
 
 }
 
-.strength-box div {
+.strength-box .bar {
     border: 1px solid white;
     width: 10px;
     height: 25px;
@@ -192,8 +193,17 @@ ul{
     background-color: rgba(49, 41, 41, 0.748);
 }
 
-#one{
+.strength{
     margin-left: 200px;
+    margin-right: 10px;
+    height: fit-content;
+    width: fit-content;
+    background-color: rgba(128, 128, 128, 0);
+    font-size: 20px;
+}
+
+#one{
+    margin-left: px;
 }
 
 material-symbols-outlined{
@@ -221,5 +231,21 @@ material-symbols-outlined{
     background-color: rgba(128, 128, 128, 0);
 }
 
+@media screen and (max-width: 480px) {
+    .container{
+        max-width: fit-content;
+        height: fit-content;
+    }
+
+    .info-box{
+        max-width: auto;
+        height: auto;
+    }
+
+    .Passwordbox{
+        width: auto;
+        height: auto;
+    }
+}
 
 
