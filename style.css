@@ -21,10 +21,17 @@ body{
     justify-content: space-evenly;
     align-items: center;
     margin: 200px;
-    margin: 0;
+    margin-top: 100px;
     padding: 0;
-
 }
+
+.heading{
+    color: grey;
+    font-size: 20px;
+    font-weight: 1000;
+}
+
+
 
 .Passwordbox{
     /* border: 2px solid white; */
@@ -36,6 +43,7 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    color: grey;
 }
 
 
@@ -63,11 +71,8 @@ li{
 }
 
 input[type="checkbox"]{
-    display: none;
-}
-
-.custom-checkbox{
-    display: inline-block;
+    /* display: none; */
+    -webkit-appearance: none;
     width: 15px;
     height: 15px;
     border: 1px solid white;
@@ -76,9 +81,9 @@ input[type="checkbox"]{
     position: relative;
     cursor: pointer;
     background-color: rgba(128, 128, 128, 0.102);
-}
 
-.custom-checkbox:checked::before{
+}
+input[type="checkbox"]:checked::before{
     content: "\2713";
     display: block;
     position: absolute;
@@ -86,10 +91,9 @@ input[type="checkbox"]{
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 12px;
-    
 }
 
-.custom-checkbox:checked{
+input[type="checkbox"]:checked{
     background-color: greenyellow;
     color: black;
 }
@@ -146,8 +150,8 @@ input[type="range"]::-webkit-slider-thumb:active{
 }
 
 
-a{
-    text-decoration: none;
+button{
+    border: none;
 }
 
 
@@ -157,12 +161,6 @@ a{
     color: greenyellow;
 }
 
-
-.heading p{
-    color: rgb(161, 161, 161);
-    margin-top: 100px;
-    font-weight: 1000;
-}
 
 ul{
     list-style-type: none;
@@ -202,15 +200,26 @@ material-symbols-outlined{
     color: yellowgreen;
 }
 
-.Charlen{
-    font-size: 30px;
-    color: yellowgreen;
-}
 
 .length{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    width: fit-content;
+    height: 50px;
+    background-color: rgba(128, 128, 128, 0);
 }
+
+.length .length > p{
+    background-color: rgba(255, 0, 0, 0);
+    
+}
+
+.length span{
+    font-size: 30px;
+    color: yellowgreen;
+    background-color: rgba(128, 128, 128, 0);
+}
+
 
 
