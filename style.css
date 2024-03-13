@@ -104,9 +104,11 @@ input[type="range"]{
     appearance: none;
     width: 80%;
     height: 10px;
-    background: background: linear-gradient(to right, greenyellow 0%, greenyellow 100%);
+    background:linear-gradient(greenyellow, greenyellow );
     border-radius: 5px;
     outline: none;
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
 }
 
 input[type="range"]::-webkit-slider-thumb{

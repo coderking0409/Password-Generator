@@ -119,3 +119,7 @@ const strengthBox = () => {
     }
 };
  
+
+rangeInput.addEventListener("input",()=>{
+    rangeInput.style.backgroundSize = (rangeInput.value/50)*100+"% 100%";
+})
