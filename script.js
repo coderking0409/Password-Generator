@@ -49,6 +49,8 @@ const generatePassword = (password = "") => {
     return trimPass(password,totalChar.value)
 }
 
+
+
 generateButton.addEventListener("click",function(){
     const newPassword = generatePassword();
     passwordBox.textContent = newPassword;
@@ -118,8 +120,51 @@ const strengthBox = () => {
         bar4.style.backgroundColor = "darkgoldenrod";
     }
 };
- 
 
 rangeInput.addEventListener("input",()=>{
     rangeInput.style.backgroundSize = (rangeInput.value/50)*100+"% 100%";
 })
+
+const copybtn = document.getElementById("copy")
+
+function copyText(){
+    let password = document.getElementById("passwordbox")
+
+    navigator.clipboard.writeText(password.textContent).then(function (){
+        alert(`Your password ${password.textContent} is copied to clipboard`)
+    });
+
+};
+
+copybtn.addEventListener("click",copyText);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let copyBtn = document.getElementById("copy");
+
+// function copy(){
+
+//     let password = document.getElementById("passwordbox")
+
+//     navigator.clipboard.writeText(password.textContent).then(function(){
+
+//         alert(`Password copied to clipboard: ${password.textContent}`);
+
+//     });
+
+// }
+
+// copyBtn.addEventListener("click",copy);

@@ -248,5 +248,9 @@ material-symbols-outlined{
     }
 }
 
-
-
+#copy{
+    position: relative;
+    margin-left: 350px;
+    margin-top: -40px;
+    cursor: pointer;
+}
